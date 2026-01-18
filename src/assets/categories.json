@@ -1,0 +1,20 @@
+[
+  {
+    "id": 1,
+    "name": "Lifestyle",
+    "image": "/src/assets/images/category1.jpg",
+    "description": "Explore books that enhance your lifestyle, from self-improvement to daily habits and wellness."
+  },
+  {
+    "id": 2,
+    "name": "Recipe",
+    "image": "/src/assets/images/category2.jpg",
+    "description": "Discover the best recipes and culinary guides to elevate your cooking skills and enjoy delicious meals."
+  },
+  {
+    "id": 3,
+    "name": "Romance",
+    "image": "/src/assets/images/category3.jpg",
+    "description": "Dive into heartwarming and passionate romance stories that will keep you turning the pages."
+  }
+]
