@@ -17,7 +17,7 @@ const router = createRouter({
     {
       path: '/shop',
       name: 'shop',
-      component: () => import('../views/ShopGrid.vue'),
+      component: () => import('../views/ShopView.vue'),
     },
     {
       path: '/blogs',
@@ -29,6 +29,23 @@ const router = createRouter({
       name: 'item',
       component: () => import('../views/ItemView.vue'),
     },
+    {
+      path: '/shop/:categorySlug?',
+      name: 'shop',
+      component: () => import('@/views/ShopView.vue')
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: () => import('@/views/CartView.vue')
+    },
+    {
+      path: '/:pathMatch(.*)*',
+      name: 'not-found',
+      component: () => import('@/views/404.vue')
+    }
+
+
 
   ],
 })

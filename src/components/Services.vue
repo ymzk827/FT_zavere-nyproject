@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import servicesData from '@/assets/services.json';
+import servicesData from '@/assets/data/services.json';
 
 interface Service {
   id: number;

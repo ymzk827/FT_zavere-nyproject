@@ -1,52 +1,88 @@
-<script setup lang="ts">
-import { ref, computed } from 'vue';
-import { useRoute } from 'vue-router';
-import itemsData from '@/assets/items.json';
-import Shop from '@/views/ShopView.vue';
+<script lang="ts">
+import { defineComponent } from 'vue'
+import { useCartStore } from '@/cartStore.ts'
+import itemsData from '@/assets/data/items.json'
+import Shop from '@/components/ShopMini.vue'
+import { RouterLink } from 'vue-router'
 
 interface Product {
-  id: number;
-  name: string;
-  image: string;
-  price: number;
-  description: string;
-  extendedDescription: string;
+  id: number
+  name: string
+  image: string
+  price: number
+  category: string
+  description: string
+  extendedDescription: string
 }
 
-// Get slug from route (e.g., /product/:slug)
-const route = useRoute();
-const slug = Number(route.params.slug); // Convert to number
+export default defineComponent({
+  name: 'ProductDetail',
 
-// Find product from JSON based on id
-const product = computed<Product | null>(() => {
-  return itemsData.find((item: Product) => item.id === slug) || null;
-});
+  components: {
+    Shop,
+    RouterLink
+  },
 
-const quantity = ref(1);
+  data() {
+    return {
+      quantity: 1 as number,
+      items: itemsData as Product[]
+    }
+  },
 
-function increment() {
-  quantity.value++;
-}
+  computed: {
+    slug(): number {
+      return Number(this.$route.params.slug)
+    },
 
-function decrement() {
-  if (quantity.value > 1) quantity.value--;
-}
+    product(): Product | null {
+      return this.items.find(item => item.id === this.slug) || null
+    }
+  },
 
-function addToCart() {
-  if (!product.value) return;
-  console.log(`Added ${quantity.value} x ${product.value.name} to cart`);
-}
+  methods: {
+    increment() {
+      this.quantity++
+    },
 
-function buyNow() {
-  if (!product.value) return;
-  console.log(`Proceed to buy ${quantity.value} x ${product.value.name}`);
-}
+    decrement() {
+      if (this.quantity > 1) this.quantity--
+    },
+
+    addToCart() {
+    if (!this.product) return
+    const cartStore = useCartStore() // Pinia store instance
+    cartStore.addItem({
+      id: this.product.id,
+      name: this.product.name,
+      price: this.product.price,
+      quantity: this.quantity,
+      image: this.product.image
+    })
+    console.log(`Added ${this.quantity} x ${this.product.name} to cart`)
+  },
+
+  buyNow() {
+    if (!this.product) return
+    const cartStore = useCartStore()
+    cartStore.addItem({
+      id: this.product.id,
+      name: this.product.name,
+      price: this.product.price,
+      quantity: this.quantity,
+      image: this.product.image
+    })
+    this.$router.push('/checkout')
+    }
+  }
+})
 </script>
 
 <template>
   <section class="product-view py-5" v-if="product">
     <div class="container">
       <div class="row g-4 align-items-center">
+
         <!-- Product Image -->
         <div class="col-md-6 text-center">
           <img :src="product.image" class="img-fluid" :alt="product.name" />
@@ -56,6 +92,11 @@ function buyNow() {
         <div class="col-md-6">
           <h1 class="mb-3">{{ product.name }}</h1>
           <p class="text-muted fs-5 mb-2">$ {{ product.price.toFixed(2) }}</p>
+
+          <RouterLink :to="`/shop/${product.category}`" class="mb-4 d-inline-block">
+            Category: {{ product.category }}
+          </RouterLink>
+
           <p class="mb-4">{{ product.extendedDescription }}</p>
 
           <!-- Quantity Selector -->
@@ -80,13 +121,15 @@ function buyNow() {
     <p>Sorry, we couldn’t find the product you are looking for.</p>
   </section>
 
+  <!-- Mini shop below product -->
   <Shop :itemsCount="4"/>
 </template>
 
 <style scoped>
 .product-view img {
-  max-width: 100%;
-  border-radius: 8px;
+  max-width: 450px;   /* 👈 control size here */
+  max-height: 450px;
+  width: 100%;
   object-fit: contain;
 }
 

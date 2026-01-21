@@ -3,9 +3,9 @@ import { Swiper, SwiperSlide } from 'swiper/vue';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import Shop from '@/views/ShopView.vue';
+import Shop from '@/components/ShopMini.vue';
 import Services from '@/components/Services.vue';
-import Categories from '@/views/CategoriesView.vue';
+import CategoriesMini from '@/components/Categories.vue';
 
 import { Navigation, Autoplay } from 'swiper/modules';
 
@@ -114,7 +114,7 @@ import { Navigation, Autoplay } from 'swiper/modules';
       </Swiper>
     </section>
     <Services />
-    <Shop :itemsCount="4"/>
-    <Categories />
+    <Shop/>
+    <CategoriesMini />
   </main>
 </template>

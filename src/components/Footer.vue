@@ -6,7 +6,7 @@
             <div class="row d-flex flex-wrap justify-content-between">
               <div class="col-lg-3 col-sm-6 pb-3">
                 <div class="footer-menu">
-                  <img src="./assets/images/main-logo.png" alt="logo" class="img-fluid mb-2">
+                  <img src="@/assets/images/main-logo.png" alt="logo" class="img-fluid mb-2">
                   <p>Nisi, purus vitae, ultrices nunc. Sit ac sit suscipit hendrerit. Gravida massa volutpat aenean odio
                     erat nullam fringilla.</p>
                   <div class="social-links">
@@ -14,7 +14,7 @@
                       <li>
                         <a href="#">
                           <svg class="facebook">
-                            <use xlink:href="#facebook" />
+                            
                           </svg>
                         </a>
                       </li>
@@ -55,7 +55,7 @@
                   <h5 class="widget-title pb-2">Quick Links</h5>
                   <ul class="menu-list list-unstyled text-capitalize">
                     <li class="menu-item mb-1">
-                      <a href="#">Home</a>
+                      <router-link class="nav-link me-4" to="/shop" exact-active-class="active">Home</router-link>
                     </li>
                     <li class="menu-item mb-1">
                       <a href="#">About</a>

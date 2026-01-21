@@ -1,3 +1,24 @@
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useCartStore } from '@/cartStore.ts'
+import navigationData from '@/assets/data/navigation.json'
+
+interface NavItem {
+  name: string
+  dest: string
+}
+
+const navItems = navigationData as NavItem[]
+
+// Pinia cart store
+const cartStore = useCartStore()
+
+// Counter for header
+const cartCount = computed(() => cartStore.totalItems)
+</script>
+
+
+
 <template>
   <header id="header" class="site-header">
     <!-- Top Info Bar -->
@@ -56,38 +77,52 @@
           <div class="offcanvas-body">
             <ul id="navbar"
                 class="navbar-nav text-uppercase justify-content-start justify-content-lg-center align-items-start align-items-lg-center flex-grow-1">
-                <li class="nav-item">
-                <router-link class="nav-link me-4" to="/" exact-active-class="active">Home</router-link>
-                </li>
-                <li class="nav-item">
-                <router-link class="nav-link me-4" to="/about" exact-active-class="active">About</router-link>
-                </li>
-                <li class="nav-item">
-                <router-link class="nav-link me-4" to="/shop" exact-active-class="active">Shop</router-link>
-                </li>
-                <li class="nav-item">
-                <router-link class="nav-link me-4" to="/blogs" exact-active-class="active">Blogs</router-link>
-                </li>
-                <li class="nav-item">
-                <router-link class="nav-link me-4" to="/contact" exact-active-class="active">Contact</router-link>
+                <li class="nav-item" v-for="n in  navigationData" :key="n.name">
+                <router-link class="nav-link me-4" :to="n.dest" exact-active-class="active">{{ n.name }}</router-link>
                 </li>
             </ul>
 
             <!-- User items: search & profile -->
-            <div class="user-items d-flex">
-                <ul class="d-flex justify-content-end list-unstyled mb-0">
-                <li class="search-item pe-3">
-                    <a href="#" class="search-button">
-                    <svg class="search"><use xlink:href="#search"></use></svg>
-                    </a>
-                </li>
-                <li class="pe-3">
-                    <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                    <svg class="user"><use xlink:href="#user"></use></svg>
-                    </a>
-                </li>
-                </ul>
-            </div>
+            <div class="user-items d-flex align-items-center">
+            <ul class="d-flex justify-content-end list-unstyled mb-0 align-items-center">
+
+              <!-- Search -->
+              <li class="search-item pe-3">
+                <a href="#" class="search-button">
+                  <svg class="search">
+                    <use xlink:href="#search"></use>
+                  </svg>
+                </a>
+              </li>
+
+              <!-- Cart -->
+              <li class="pe-3 position-relative">
+                <router-link to="/cart">
+                  <svg class="cart">
+                    <use xlink:href="#cart"></use>
+                  </svg>
+
+                  <!-- Counter -->
+                  <span
+                    v-if="cartCount >= 0"
+                    class="cart-badge"
+                  >
+                    CART: {{ cartCount }}
+                  </span>
+                </router-link>
+              </li>
+
+              <!-- Profile -->
+              <li>
+                <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                  <svg class="user">
+                    <use xlink:href="#user"></use>
+                  </svg>
+                </a>
+              </li>
+
+            </ul>
+          </div>
             </div>
 
         </div>
