@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "title": "Free delivery",
+    "description": "Consectetur adipi elit lorem ipsum dolor sit amet.",
+    "icon": "cart-outline"
+  },
+  {
+    "id": 2,
+    "title": "Quality guarantee",
+    "description": "Dolor sit amet orem ipsu mcons ectetur adipi elit.",
+    "icon": "quality"
+  },
+  {
+    "id": 3,
+    "title": "Daily offers",
+    "description": "Amet consectetur adipi elit loreme ipsum dolor sit.",
+    "icon": "price-tag"
+  },
+  {
+    "id": 4,
+    "title": "100% secure payment",
+    "description": "Rem Lopsum dolor sit amet, consectetur adipi elit.",
+    "icon": "shield-plus"
+  }
+]

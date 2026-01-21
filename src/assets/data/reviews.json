@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "author": "Emma Chamberlin",
+    "text": "I stumbled upon this bookstore while visiting the city, and it instantly became my favorite spot. The cozy atmosphere, friendly staff, and wide selection of books make every visit a delight!",
+    "rating": 5
+  },
+  {
+    "id": 2,
+    "author": "Thomas John",
+    "text": "As an avid reader, I'm always on the lookout for new releases, and this bookstore never disappoints. They always have the latest titles, and their recommendations have introduced me to some incredible reads!",
+    "rating": 5
+  },
+  {
+    "id": 3,
+    "author": "Kevin Bryan",
+    "text": "I ordered a few books online from this store, and I was impressed by the quick delivery and careful packaging. It's clear that they prioritize customer satisfaction, and I'll definitely be shopping here again!",
+    "rating": 5
+  },
+  {
+    "id": 4,
+    "author": "Stevin",
+    "text": "I stumbled upon this tech store while searching for a new laptop, and I couldn't be happier with my experience! The staff was incredibly knowledgeable and guided me through the process of choosing the perfect device for my needs.",
+    "rating": 5
+  },
+  {
+    "id": 5,
+    "author": "Roman",
+    "text": "Amazing service, fast delivery, and excellent product quality. Highly recommended!",
+    "rating": 5
+  }
+]
