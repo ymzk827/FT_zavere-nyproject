@@ -16,7 +16,7 @@ import { Navigation, Autoplay } from 'swiper/modules';
     <section
       id="billboard"
       class="position-relative d-flex align-items-center py-5 bg-light-gray"
-      style="background-image: url(@/assets/images/banner-image-bg.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; height: 800px;"
+      style="background-image: url(/images/banner-image-bg.jpg); background-size: cover; background-repeat: no-repeat; background-position: center; height: 800px;"
     >
       <!-- Navigation Arrows -->
       <div
@@ -61,7 +61,7 @@ import { Navigation, Autoplay } from 'swiper/modules';
               </div>
               <div class="col-md-6 text-center">
                 <img
-                  src="@/assets/images/banner-image2.png"
+                  src="/images/banner-image2.png"
                   class="img-fluid"
                   alt="banner"
                 />
@@ -82,7 +82,7 @@ import { Navigation, Autoplay } from 'swiper/modules';
               </div>
               <div class="col-md-6 text-center">
                 <img
-                  src="@/assets/images/banner-image1.png"
+                  src="/images/banner-image1.png"
                   class="img-fluid"
                   alt="banner"
                 />
@@ -103,7 +103,7 @@ import { Navigation, Autoplay } from 'swiper/modules';
               </div>
               <div class="col-md-6 text-center">
                 <img
-                  src="@/assets/images/banner-image.png"
+                  src="/images/banner-image.png"
                   class="img-fluid"
                   alt="banner"
                 />

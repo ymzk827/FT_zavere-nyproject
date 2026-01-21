@@ -2,19 +2,19 @@
   {
     "slug": "lifestyle",
     "name": "Lifestyle",
-    "image": "/src/assets/images/category1.jpg",
+    "image": "/images/category1.jpg",
     "description": "Books to improve everyday life, habits and mindset."
   },
   {
     "slug": "recipe",
     "name": "Recipe",
-    "image": "/src/assets/images/category2.jpg",
+    "image": "/images/category2.jpg",
     "description": "Cooking, food inspiration and kitchen creativity."
   },
   {
     "slug": "romance",
     "name": "Romance",
-    "image": "/src/assets/images/category3.jpg",
+    "image": "/images/category3.jpg",
     "description": "Love stories, emotions and unforgettable relationships."
   }
 ]
