@@ -1,0 +1,1 @@
+import{_ as a,c as n,a as e,o as t}from"./index-D_WRGLC-.js";const o={};function c(l,s){return t(),n("main",null,[...s[0]||(s[0]=[e("section",{class:"padding-large text-center"},[e("div",{class:"container"},[e("h1",{class:"mb-4"},"Blogs View"),e("p",null,"This is the Blogs view page.")])],-1)])])}const i=a(o,[["render",c]]);export{i as default};
