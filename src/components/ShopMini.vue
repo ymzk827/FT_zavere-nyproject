@@ -83,7 +83,7 @@ export default defineComponent({
                 <img :src="item.image" class="card-img-top img-fluid" :alt="item.name" />
                 <div class="card-body">
                   <h5 class="card-title">{{ item.name }}</h5>
-                  <p class="card-text text-muted">{{ item.description }}</p>
+                  <p class="card-text ">{{ item.description }}</p>
                   <p class="fw-bold">$ {{ item.price.toFixed(2) }}</p>
                   <div class="d-flex gap-2 justify-content-center mt-2">
                     <router-link

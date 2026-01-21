@@ -5,8 +5,8 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import Shop from '@/components/ShopMini.vue';
 import Services from '@/components/Services.vue';
-import CategoriesMini from '@/components/Categories.vue';
-
+import CategoriesMini from '@/components/ItemCategories.vue';
+import ShopReviews from '@/components/ShopReviews.vue';
 import { Navigation, Autoplay } from 'swiper/modules';
 
 </script>
@@ -114,7 +114,8 @@ import { Navigation, Autoplay } from 'swiper/modules';
       </Swiper>
     </section>
     <Services />
-    <Shop/>
+    <ShopReviews/>
     <CategoriesMini />
+    <Reviews />
   </main>
 </template>
