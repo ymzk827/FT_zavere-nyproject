@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "vite",
     "build": "run-p type-check \"build-only {@}\" --",
+    "deploy": "npm run build && gh-pages -d dist",
     "preview": "vite preview",
     "test:e2e": "playwright test",
     "build-only": "vite build",

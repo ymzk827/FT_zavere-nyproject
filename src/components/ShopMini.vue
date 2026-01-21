@@ -41,6 +41,9 @@ export default defineComponent({
         result.push(this.items.slice(i, i + chunkSize))
       }
       return result
+    },
+    baseUrl() {
+      return import.meta.env.BASE_URL
     }
   },
 

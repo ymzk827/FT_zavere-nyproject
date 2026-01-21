@@ -2,6 +2,7 @@
 import { computed } from 'vue'
 import { useCartStore } from '@/cartStore.ts'
 import navigationData from '@/assets/data/navigation.json'
+import mainLogo from '@/assets/images/main-logo.png';
 
 interface NavItem {
   name: string
@@ -49,7 +50,7 @@ const cartCount = computed(() => cartStore.totalItems)
     <nav id="header-nav" class="navbar navbar-expand-lg py-3">
       <div class="container">
         <a class="navbar-brand" href="index.html">
-          <img src="@/assets/images/main-logo.png" class="logo" alt="Logo">
+          <img :src="mainLogo" class="logo" alt="Logo">
         </a>
 
         <button 
@@ -69,7 +70,7 @@ const cartCount = computed(() => cartStore.totalItems)
         <div class="offcanvas offcanvas-end" tabindex="-1" id="bdNavbar" aria-labelledby="bdNavbarOffcanvasLabel">
           <div class="offcanvas-header px-4 pb-0">
             <a class="navbar-brand" href="index.html">
-              <img src="@/assets/images/main-logo.png" class="logo" alt="Logo">
+              <img :src="mainLogo" class="logo" alt="Logo">
             </a>
             <button type="button" class="btn-close btn-close-black" data-bs-dismiss="offcanvas" aria-label="Close"></button>
           </div>

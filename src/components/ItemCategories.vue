@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import servicesData from '@/assets/data/categories.json';
 
 interface Category {
@@ -9,6 +10,10 @@ interface Category {
 }
 
 const categories: Category[] = servicesData;
+
+const baseUrl = computed(() => {
+  return import.meta.env.BASE_URL;
+});
 </script>
 
 

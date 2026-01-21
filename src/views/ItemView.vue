@@ -37,6 +37,9 @@ export default defineComponent({
 
     product(): Product | null {
       return this.items.find(item => item.id === this.slug) || null
+    },
+     baseUrl() {
+      return import.meta.env.BASE_URL
     }
   },
 
@@ -85,7 +88,7 @@ export default defineComponent({
 
         <!-- Product Image -->
         <div class="col-md-6 text-center">
-          <img :src="product.image" class="img-fluid" :alt="product.name" />
+          <img :src="baseUrl + product.image" class="img-fluid" :alt="product.name" />
         </div>
 
         <!-- Product Details -->

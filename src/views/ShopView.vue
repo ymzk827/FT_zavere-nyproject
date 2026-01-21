@@ -42,7 +42,13 @@ export default defineComponent({
     visibleItems(): Item[] {
       return this.filteredItems.slice(0, this.itemsToShow)
     },
+
+    baseUrl() {
+      return import.meta.env.BASE_URL + ""
+    }
   },
+
+  
 
   watch: {
     '$route.params.categorySlug': {
