@@ -12,10 +12,6 @@
     "name": "About"
     },
     {
-    "dest": "/blogs",
-    "name": "Blogs"
-    },
-    {
     "dest": "/contact",
     "name": "Contact"
     }

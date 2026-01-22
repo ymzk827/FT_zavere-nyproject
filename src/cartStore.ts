@@ -9,9 +9,17 @@ interface CartItem {
   image: string
 }
 
+export interface Order {
+  id: string
+  items: CartItem[]
+  total: number
+  createdAt: string
+}
+
 export const useCartStore = defineStore('cart', {
   state: () => ({
-    items: [] as CartItem[]
+    items: [] as CartItem[],
+    orders: [] as Order[]
   }),
 
   getters: {
@@ -37,6 +45,21 @@ export const useCartStore = defineStore('cart', {
 
     clearCart() {
       this.items = []
+    },
+
+    checkout() {
+      const order: Order = {
+        id: crypto.randomUUID(),
+         items: [...this.items],
+        total: this.totalPrice,
+        createdAt: new Date().toISOString()
+      }
+
+      this.orders.push(order)
+      this.clearCart()
+
+      return order
     }
+
   }
 })
