@@ -1,4 +1,4 @@
-// src/stores/cartStore.ts
+
 import { defineStore } from 'pinia'
 
 interface CartItem {
