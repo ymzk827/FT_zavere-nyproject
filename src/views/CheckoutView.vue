@@ -6,16 +6,12 @@ const cartStore = useCartStore()
 const router = useRouter()
 
 function handleCheckout() {
-  try {
     const order = cartStore.checkout()
     router.push({
       name: 'checkout-success',
       query: { orderId: order.id }
     })
-  } catch (e) {
-    alert('Your cart is empty')
-  }
-}
+    }
 </script>
 
 <template>

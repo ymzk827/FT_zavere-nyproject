@@ -48,18 +48,23 @@ export const useCartStore = defineStore('cart', {
     },
 
     checkout() {
-      const order: Order = {
-        id: crypto.randomUUID(),
-         items: [...this.items],
-        total: this.totalPrice,
-        createdAt: new Date().toISOString()
-      }
-
-      this.orders.push(order)
-      this.clearCart()
-
-      return order
+    if (this.items.length === 0) {
+      throw new Error('Cart is empty')
     }
+
+    const order: Order = {
+      id: crypto.randomUUID(),
+      items: [...this.items],
+      total: this.totalPrice,
+      createdAt: new Date().toISOString()
+    }
+
+    this.orders.push(order)
+    this.clearCart()
+
+    return order
+  }
+
 
   }
 })
