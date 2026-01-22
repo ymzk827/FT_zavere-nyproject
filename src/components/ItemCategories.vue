@@ -18,7 +18,7 @@ const baseUrl = computed(() => {
 
 
 <template>
-  <section id="categories" class="padding-large pt-0">
+  <section id="categories" class="padding-large pt-0 mt-4">
     <div class="container">
       <div class="section-title overflow-hidden mb-4">
         <h3 class="d-flex align-items-center">Categories</h3>

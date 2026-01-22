@@ -2,17 +2,19 @@
 import { defineComponent } from 'vue'
 import { useCartStore } from '@/cartStore'
 import { RouterLink } from 'vue-router'
+import Shop from '@/components/ShopMini.vue';
 
 export default defineComponent({
   name: 'CartView',
 
   components: {
-    RouterLink
+    RouterLink,
+    Shop
   },
 
   data() {
     return {
-      cartStore: useCartStore() // Pinia store instance
+      cartStore: useCartStore()
     }
   },
 
@@ -79,6 +81,7 @@ export default defineComponent({
           <RouterLink to="/checkout" class="btn btn-success">
             Proceed to Checkout
           </RouterLink>
+          
         </div>
       </div>
 
@@ -88,6 +91,7 @@ export default defineComponent({
           Continue Shopping
         </RouterLink>
       </div>
+      <Shop />
     </div>
   </section>
 </template>

@@ -83,7 +83,7 @@ export default defineComponent({
               :key="item.id"
             >
               <div class="card h-100 text-center border-0 shadow-sm">
-                <img :src="item.image" class="card-img-top img-fluid" :alt="item.name" />
+                <img :src="baseUrl + item.image" class="card-img-top img-fluid" :alt="item.name" />
                 <div class="card-body">
                   <h5 class="card-title">{{ item.name }}</h5>
                   <p class="card-text ">{{ item.description }}</p>

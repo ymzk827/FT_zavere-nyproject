@@ -148,7 +148,7 @@ export default defineComponent({
     <div class="row g-4">
       <div v-for="item in visibleItems" :key="item.id" class="col-6 col-md-3">
         <div class="card h-100 text-center border-0 shadow-sm">
-          <img :src="item.image" class="card-img-top" />
+          <img :src="baseUrl +item.image" class="card-img-top" />
 
           <div class="card-body">
             <h5>{{ item.name }}</h5>

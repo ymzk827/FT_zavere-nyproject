@@ -9,7 +9,6 @@ import Shop from '@/components/ShopMini.vue';
 import Services from '@/components/Services.vue';
 import CategoriesMini from '@/components/ItemCategories.vue';
 import ShopReviews from '@/components/ShopReviews.vue';
-import Reviews from '@/components/ShopReviews.vue';
 
 // ✅ Імпортуємо банери як модулі, щоб build Vite правильно їх обробив
 import bannerBg from '@/assets/images/banner-image-bg.jpg';
@@ -103,6 +102,5 @@ import banner3 from '@/assets/images/banner-image2.png';
     <ShopReviews />
     <CategoriesMini />
     <Shop />
-    <Reviews />
   </main>
 </template>
