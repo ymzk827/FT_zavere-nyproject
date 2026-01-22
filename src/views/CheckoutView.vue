@@ -7,11 +7,7 @@ const router = useRouter()
 
 function handleCheckout() {
     const order = cartStore.checkout()
-    router.push({
-      name: 'checkout-success',
-      query: { orderId: order.id }
-    })
-    }
+}
 </script>
 
 <template>
