@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import servicesData from '@/assets/data/categories.json';
 
 interface Category {
@@ -9,11 +10,15 @@ interface Category {
 }
 
 const categories: Category[] = servicesData;
+
+const baseUrl = computed(() => {
+  return import.meta.env.BASE_URL;
+});
 </script>
 
 
 <template>
-  <section id="categories" class="padding-large pt-0">
+  <section id="categories" class="padding-large pt-0 mt-4">
     <div class="container">
       <div class="section-title overflow-hidden mb-4">
         <h3 class="d-flex align-items-center">Categories</h3>

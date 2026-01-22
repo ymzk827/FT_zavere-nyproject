@@ -12,7 +12,7 @@ const services: Service[] = servicesData;
 </script>
 
 <template>
-  <section id="company-services" class="padding-large pb-0">
+  <section id="company-services" class="p-5">
     <div class="container">
       <div class="row">
         <div
