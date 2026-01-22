@@ -9,7 +9,7 @@ export default defineComponent({
   }
 })
 </script>
-
+<!-- 2 -->
 <template>
   <section class="about-page py-5">
     <div class="container">
